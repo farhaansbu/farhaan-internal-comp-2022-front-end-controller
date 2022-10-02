@@ -127,5 +127,24 @@ function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max 
     }
 }
 
+/**
+ * 
+ * @param {String} checkboxDivId The ID of the checkbox element being created
+ * @param {String} parentDivId The parent div to append the checkbox element to
+ */
+function createCheckbox(checkboxDivId, parentDivId) {
+    //Create checkbox element
+    let checkbox = document.createElement("INPUT");
+    checkbox.type = "checkbox";
+    checkbox.id = checkboxDivId;
+    //Append checkbox to parent div
+    if(appendElToParentDiv(checkbox) != 0) {
+        console.error(`Parent div ${parentDivId} does not exist`);
+        return null;
+    }
+}
 
-export {appendElToParentDiv, createArrow, createSlider};
+
+
+
+export {appendElToParentDiv, createArrow, createSlider, createCheckbox};
