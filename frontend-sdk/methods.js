@@ -24,10 +24,11 @@ function appendElToParentDiv(parentDivId, elementToAdd) {
  * @param {String} direction The direction the arrow element will correspond to
  * @param {String} parentDivId The parent div to append the arrow element to
  * @param {Number} size An optional parameter where users specify the size of the arrow
+ * in units of pixels
  * @param {String} imgFileName An optional parameter where users specify the image file name to use
  * (if not provided, default files are used)
  */
-function createArrow(direction, parentDivId, size = 40, imgFileName = "") {
+function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
     //Make direction variable lowercase
     direction = direction.toLowerCase();
     //Declare + initialize arrow object as an img tag
@@ -62,8 +63,12 @@ function createArrow(direction, parentDivId, size = 40, imgFileName = "") {
     arrowImg.src = imgUrl;
     //Set alt property
     arrowImg.alt = direction + ' arrow'
-    //Set size property
-    arrowImg.size = size;
+    //Set height, width property (makes assumption that image file is square)
+    arrowImg.height = size;
+    arrowImg.width = size;
+    //DEBUG
+    console.log(arrowImg.size)
+    //DEBUG
     //Set onclick property for arrow to call sendToBot()
     //arrowImg.onclick = sendToBot(direction);
     //Append arrow element to parent div with appendElToParentDiv()
