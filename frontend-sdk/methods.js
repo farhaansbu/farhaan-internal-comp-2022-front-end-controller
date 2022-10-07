@@ -150,6 +150,52 @@ function createCheckbox(checkboxDivId, parentDivId) {
 }
 
 
+/*
+function createJoystick(joystickDivId) {
+    
+    //Making a joystick requires creating 2 div tags. First, an outer div of class
+    //'joystick' must be created; this div will track the position of the joystick. 
+    //Inside the outer div, there should be a div of class 'dial'; this div will 
+    //render the visual elements of the joystick. 
+    
+
+    for(const stick of document.getElementsByClassName(`stick`)) {
+        history.JoySticks.push({x: 0, y: 0});
+        const id = history.JoySticks.length - 1; //essentially the index of the joystick 
+        stick.addEventListener(`touchmove`, e => {
+            if(!e.touches) return;
+            e.preventDefault();
+            const touchID = getTouchID(e, stick),
+                  center = (stick.clientWidth)/2, //its a square so these coordinates will always be equal for x,y
+                  x = e.touches[touchID].clientX - panel.offsetLeft - stick.parentElement.offsetLeft - center,
+                  y = e.touches[touchID].clientY - panel.offsetTop - stick.parentElement.offsetTop - center;
+            if(x >= -0.5*center && x <= 1.5*center) {
+                stick.style.left = `${x}px`;
+                const PWM = Math.floor((x+0.5*center)/stick.clientWidth*adcResolution);
+                if(percentDifference(PWM, history.JoySticks.x) > bufferDifferenceThreshold) {
+                    history.JoySticks[id].x = PWM;
+                    console.log(`Joystick ${id} - fetched`);
+                    //fetch
+                }
+            }
+            if(yEnabled && y >= -0.5*center && y <= 1.5*center) {
+                stick.style.top = `${y}px`;
+                const PWM = Math.floor((y+0.5*center)/stick.clientWidth*adcResolution);
+                if(percentDifference(PWM, history.JoySticks.y) > bufferDifferenceThreshold) {
+                    history.JoySticks[id].y = PWM;
+                    console.log(`Joystick ${id} - fetched`);
+                    //fetch
+                }
+            }
+        });
+        stick.addEventListener(`touchend`, () => {
+            stick.style.left = stick.style.top = ``;
+            history.JoySticks.x = history.JoySticks.y = adcResolution/2; //idk if we want to keep a reset
+        });
+    }
+}
+*/
+
 
 
 export {appendElToParentDiv, createArrow, createSlider, createCheckbox};
