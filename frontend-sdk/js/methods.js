@@ -74,10 +74,8 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
     //arrowImg.onclick = sendToBot(direction);
     //Append arrow element to parent div with appendElToParentDiv()
     //If this process fails, then the specified parent div does not exist
-    if(appendElToParentDiv(parentDivId, arrowImg) != 0) {
-        console.error(`Parent div ${parentDivId} does not exist`);
-        return null;
-    }
+    if(appendElToParentDiv(parentDivId, arrowImg) != 0)
+        throw Error(`Parent div ${parentDivId} does not exist`);
     //Return the arrow element
     return arrowImg;
 }
@@ -111,10 +109,8 @@ function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max 
     }
     //Append slider element to praent div with appendElToParentDiv()
     //If this process fails, then the specified parent div does not exist
-    if(appendElToParentDiv(parentDivId, slider) != 0) {
-        console.error(`Parent div ${parentDivId} does not exist`);
-        return null;
-    }
+    if(appendElToParentDiv(parentDivId, slider) != 0)
+        throw Error(`Parent div ${parentDivId} does not exist`);
     //Append p element with embedded span element to parent div to print out value of slider
     let valueText = document.createElement("p");
     valueText.id = sliderDivId + "-value";
@@ -125,10 +121,8 @@ function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max 
     //Add span element within valueText p element
     valueText.append(valueTextSpan);
     //Append valueText to parent div
-    if(appendElToParentDiv(parentDivId, valueText) != 0) {
-        console.error(`Parent div ${parentDivId} does not exist`);
-        return null;
-    }
+    if(appendElToParentDiv(parentDivId, valueText) != 0)
+        throw Error(`Parent div ${parentDivId} does not exist`);
 
     //Use the slider oninput propety to have span element dynamically update with value of slider
     slider.oninput = function() {
@@ -150,10 +144,8 @@ function createCheckbox(checkboxDivId, parentDivId) {
     checkbox.type = "checkbox";
     checkbox.id = checkboxDivId;
     //Append checkbox to parent div
-    if(appendElToParentDiv(parentDivId, checkbox) != 0) {
-        console.error(`Parent div ${parentDivId} does not exist`);
-        return null;
-    }
+    if(appendElToParentDiv(parentDivId, checkbox) != 0)
+        throw Error(`Parent div ${parentDivId} does not exist`);
     //Return checkbox element
     return checkbox;
 }
