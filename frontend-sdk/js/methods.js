@@ -1,3 +1,5 @@
+import { createJoyStick } from "./joystick.js";
+
 /**
  * 
  * @param {String} parentDivId The ID of the div to append elementToAdd
@@ -9,10 +11,11 @@ function appendElToParentDiv(parentDivId, elementToAdd) {
     let parentDiv = document.getElementById(parentDivId);
     //If parentDiv is undefined, then an invalid parentDivId was provided
     if(!parentDiv) {
+        //Return 1 if the parent div does not exist
         return -1;
     }
     else {
-        //Append element to div
+        //Append element to div, and return 0 to indicate a success
         parentDiv.append(elementToAdd);
         return 0;
     }
@@ -27,6 +30,7 @@ function appendElToParentDiv(parentDivId, elementToAdd) {
  * in units of pixels
  * @param {String} imgFileName An optional parameter where users specify the image file name to use
  * (if not provided, default files are used)
+ * @returns The arrow element
  */
 function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
     //Make direction variable lowercase
@@ -66,9 +70,6 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
     //Set height, width property (makes assumption that image file is square)
     arrowImg.height = size;
     arrowImg.width = size;
-    //DEBUG
-    console.log(arrowImg.size)
-    //DEBUG
     //Set onclick property for arrow to call sendToBot()
     //arrowImg.onclick = sendToBot(direction);
     //Append arrow element to parent div with appendElToParentDiv()
@@ -77,6 +78,8 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
         console.error(`Parent div ${parentDivId} does not exist`);
         return null;
     }
+    //Return the arrow element
+    return arrowImg;
 }
 
 /**
@@ -86,6 +89,7 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
  * @param {String} sliderOrientation The specified orientation of the slider element (either 'horizontal' or 'vertical')
  * @param {Number} min An optional parameter to specify the minimum value for the slider
  * @param {Number} max An optional parameter to specify the maximum value for the slider
+ * @returns The slider element created
  */
 function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max = 100) {
     //Create slider element
@@ -130,12 +134,15 @@ function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max 
     slider.oninput = function() {
         valueTextSpan.innerHTML = this.value;
     }
+    //Return the slider element
+    return slider;
 }
 
 /**
  * 
  * @param {String} checkboxDivId The ID of the checkbox element being created
  * @param {String} parentDivId The parent div to append the checkbox element to
+ * @returns The checkbox element created
  */
 function createCheckbox(checkboxDivId, parentDivId) {
     //Create checkbox element
@@ -143,59 +150,27 @@ function createCheckbox(checkboxDivId, parentDivId) {
     checkbox.type = "checkbox";
     checkbox.id = checkboxDivId;
     //Append checkbox to parent div
-    if(appendElToParentDiv(checkbox) != 0) {
+    if(appendElToParentDiv(parentDivId, checkbox) != 0) {
         console.error(`Parent div ${parentDivId} does not exist`);
         return null;
     }
+    //Return checkbox element
+    return checkbox;
 }
 
 
-/*
-function createJoystick(joystickDivId) {
-    
-    //Making a joystick requires creating 2 div tags. First, an outer div of class
-    //'joystick' must be created; this div will track the position of the joystick. 
-    //Inside the outer div, there should be a div of class 'dial'; this div will 
-    //render the visual elements of the joystick. 
-    
-
-    for(const stick of document.getElementsByClassName(`stick`)) {
-        history.JoySticks.push({x: 0, y: 0});
-        const id = history.JoySticks.length - 1; //essentially the index of the joystick 
-        stick.addEventListener(`touchmove`, e => {
-            if(!e.touches) return;
-            e.preventDefault();
-            const touchID = getTouchID(e, stick),
-                  center = (stick.clientWidth)/2, //its a square so these coordinates will always be equal for x,y
-                  x = e.touches[touchID].clientX - panel.offsetLeft - stick.parentElement.offsetLeft - center,
-                  y = e.touches[touchID].clientY - panel.offsetTop - stick.parentElement.offsetTop - center;
-            if(x >= -0.5*center && x <= 1.5*center) {
-                stick.style.left = `${x}px`;
-                const PWM = Math.floor((x+0.5*center)/stick.clientWidth*adcResolution);
-                if(percentDifference(PWM, history.JoySticks.x) > bufferDifferenceThreshold) {
-                    history.JoySticks[id].x = PWM;
-                    console.log(`Joystick ${id} - fetched`);
-                    //fetch
-                }
-            }
-            if(yEnabled && y >= -0.5*center && y <= 1.5*center) {
-                stick.style.top = `${y}px`;
-                const PWM = Math.floor((y+0.5*center)/stick.clientWidth*adcResolution);
-                if(percentDifference(PWM, history.JoySticks.y) > bufferDifferenceThreshold) {
-                    history.JoySticks[id].y = PWM;
-                    console.log(`Joystick ${id} - fetched`);
-                    //fetch
-                }
-            }
-        });
-        stick.addEventListener(`touchend`, () => {
-            stick.style.left = stick.style.top = ``;
-            history.JoySticks.x = history.JoySticks.y = adcResolution/2; //idk if we want to keep a reset
-        });
-    }
+function showJoystickValues(x, y) {
+    console.log(`bruh`, x, y);
 }
-*/
 
+function renderJoystick() {
+    const joystick = createJoyStick({
+        baseSize: `192px`,
+        stickSize: `128px`,
+    }, showJoystickValues);
+    joystick.base.style.borderRadius = `100vw`;
+    //Append joystick to DOM body
+    document.body.appendChild(joystick.base);
+}
 
-
-export {appendElToParentDiv, createArrow, createSlider, createCheckbox};
+export {appendElToParentDiv, createArrow, createSlider, createCheckbox, renderJoystick};
