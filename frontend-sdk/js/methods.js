@@ -36,7 +36,7 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
     //Make direction variable lowercase
     direction = direction.toLowerCase();
     //Declare + initialize arrow object as an img tag
-    let arrowImg = document.createElement("img");
+    const arrowImg = document.createElement("img");
     //Assign div id to arrow element
     arrowImg.id = direction + "-arrow";
     //Assign base path for img src property
@@ -84,29 +84,21 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
  * 
  * @param {String} sliderDivId The ID of the slider element being created
  * @param {String} parentDivId The parent div to append the slider element to
- * @param {String} sliderOrientation The specified orientation of the slider element (either 'horizontal' or 'vertical')
  * @param {Number} min An optional parameter to specify the minimum value for the slider
  * @param {Number} max An optional parameter to specify the maximum value for the slider
  * @returns The slider element created
  */
-function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max = 100) {
+function createSlider(sliderDivId, parentDivId, min = 0, max = 100) {
     //Create slider element
-    let slider = document.createElement("input");
+    const slider = document.createElement("input");
     slider.type = "range";
-    //Set slider ID and assign generic 'slider' class for styling convenience
+    //Set slider ID
     slider.id = sliderDivId;
-    slider.class = "slider";
     //Default value for slider is 0
     slider.value = "0";
     //Set min, max properties for slider
     slider.min = min;
     slider.max = max;
-    //Set orient property only if the value of sliderOrientation parameter is 'vertical'
-    if(sliderOrientation.toLowerCase() == 'vertical') {
-        console.log("Called!")
-        slider.orient = 'vertical';
-        console.log(slider.orient);
-    }
     //Append slider element to praent div with appendElToParentDiv()
     //If this process fails, then the specified parent div does not exist
     if(appendElToParentDiv(parentDivId, slider) != 0)
@@ -140,7 +132,7 @@ function createSlider(sliderDivId, parentDivId, sliderOrientation, min = 0, max 
  */
 function createCheckbox(checkboxDivId, parentDivId) {
     //Create checkbox element
-    let checkbox = document.createElement("INPUT");
+    const checkbox = document.createElement("INPUT");
     checkbox.type = "checkbox";
     checkbox.id = checkboxDivId;
     //Append checkbox to parent div
