@@ -130,16 +130,30 @@ function createSlider(sliderDivId, parentDivId, min = 0, max = 100) {
  * @param {String} parentDivId The parent div to append the checkbox element to
  * @returns The checkbox element created
  */
-function createCheckbox(checkboxDivId, parentDivId) {
+function createCheckbox(checkboxDivId, parentDivId, checkboxText = "") {
+    //Assign checkboxText value of checkboxDivId if parameter is not specified
+    if(checkboxText == "") {
+        checkboxText = checkboxDivId;
+    }
     //Create checkbox element
-    const checkbox = document.createElement("INPUT");
+    const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = checkboxDivId;
+    //Create span element for checkboxText
+    const checkboxSpan = document.createElement("span");
+    checkboxSpan.innerHTML = checkboxText;
+
+    //Create a wrapper p tag to put the checkbox and span element into
+    let wrapperPEl = document.createElement("label");
+    wrapperPEl.innerHTML = checkbox.outerHTML;
+    wrapperPEl.innerHTML += checkboxSpan.outerHTML;
+    wrapperPEl.id = checkboxDivId;
+
+
     //Append checkbox to parent div
-    if(appendElToParentDiv(parentDivId, checkbox) != 0)
+    if(appendElToParentDiv(parentDivId, wrapperPEl) != 0)
         throw Error(`Parent div ${parentDivId} does not exist`);
-    //Return checkbox element
-    return checkbox;
+    //Return wrapper element
+    return wrapperPEl;
 }
 
 

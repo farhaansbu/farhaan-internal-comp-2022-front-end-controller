@@ -19,4 +19,10 @@
 ---
 ## **Final Notes**
 ### Since we provide a small set of functions in this SDK, we encourage you to modify the methods.js file by adding your own functions for rendering different components or augmenting the existing functions!
+### We strongly encourage that you become comfortable with using the browser console to initially test out the SDK functions instead of having to modify a JS file each time. Below are some neat videos for becoming familiar with the browser console and JavaScript.
 ### In a final plea to maintain your sanity, **please do not use Firefox. Please do not use Firefox. Please do not use Firefox.**
+
+## Tutorial Videos
+### [Introduction the Browser Console](https://www.youtube.com/watch?v=q9jAFZjPFHo)
+### [Inspecting Elements on a Webpage](https://blog.hubspot.com/website/how-to-inspect)
+### [MDN Web Docs (for JavaScript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
