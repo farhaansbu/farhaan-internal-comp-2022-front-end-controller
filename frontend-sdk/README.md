@@ -15,6 +15,9 @@
 ### If you are working from the browser console to test/debug code, you should use the following command to access the SDK methods:
 `sdk = await import('/js/methods.js)`
 
+### When adding your JS file as a script tag to your index.html file, make sure to use the following syntax:
+`<script type = "module" src = "js/YOUR_FILE.js"></script>`
+
 ### The filepath passed in import() should differ if the directory of the file you are importing the SDK methods into does not match the directory where methods.js resides. VS Code assists with auto-suggesting a filepath, but you should verify the filepath is correct.
 ---
 ## **Final Notes**
