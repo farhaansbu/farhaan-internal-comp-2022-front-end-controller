@@ -13,7 +13,7 @@
 `import {createArrow, createCheckbox} from "/js/methods.js"` 
     
 ### If you are working from the browser console to test/debug code, you should use the following command to access the SDK methods:
-`sdk = await import('/js/methods.js)`
+`sdk = await import("./js/methods.js")`
 
 ### When adding your JS file as a script tag to your index.html file, make sure to use the following syntax:
 `<script type = "module" src = "js/YOUR_FILE.js"></script>`
