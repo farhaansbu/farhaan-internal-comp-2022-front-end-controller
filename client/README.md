@@ -3,7 +3,7 @@
 ## Introduction
 In terms of software, participants are given a [Raspberry Pi Zero W](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) microcomputer that will be attched to the chassis of their robot in order to host the Web App and provide control over electronic components such as motors and servos. Participants are also given a [Raspberry Pi Camera](https://www.raspberrypi.com/documentation/accessories/camera.html) as during the competition participants will be remotely controlling their robot through a video stream in order to find targets during the scavenger hunt.
 
-**Although this may sound very daunting, much of the [code is already provided](client) by the eboard.** 
+**Although this may sound very daunting, much of the code is already provided by the eboard.** 
 
 ## What is `config.json`?
 By default, teams will have to change the password in the [`config.json`](config.json) file and notify the eboard. This way the eboard can ensure that no team besides your own is able to access your code. The only other parameter in this file is the `developer-mode` setting which is to be `true` any time before the competition otherwise, `false`. This setting determines whether connection to the competition server should be established, **if it is unable to connect the software will crash**.
