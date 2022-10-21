@@ -13,3 +13,37 @@ input[type=range] {
 input[type=range]:hover {
   opacity: 1; /* Fully shown on mouse-over */
 }
+
+
+#up-arrow {
+  position: absolute;
+  left: 900px;
+  top: 275px;
+}
+
+h1 {
+  text-align: center;
+}
+
+
+#down-arrow {
+  position: absolute;
+  left: 900px;
+  top: 400px;
+}
+
+#j1base {
+  position: absolute;
+  left: 200px;
+  top: 298px;
+}
+
+#button-arrow {
+  position:absolute;
+  left: 750px;
+  top: 325px; 
+}
+
+
+
+
