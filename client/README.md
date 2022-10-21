@@ -6,7 +6,7 @@ In terms of software, participants are given a [Raspberry Pi Zero W](https://www
 **Although this may sound very daunting, much of the [code is already provided](client) by the eboard.** 
 
 ## What is `config.json`?
-By default, teams will have to change the password in the [`config.json`](client/config.json) file and notify the eboard. This way the eboard can ensure that no team besides your own is able to access your code. The only other parameter in this file is the `developer-mode` setting which is to be `true` any time before the competition otherwise, `false`. This setting determines whether connection to the competition server should be established, **if it is unable to connect the software will crash**.
+By default, teams will have to change the password in the [`config.json`](config.json) file and notify the eboard. This way the eboard can ensure that no team besides your own is able to access your code. The only other parameter in this file is the `developer-mode` setting which is to be `true` any time before the competition otherwise, `false`. This setting determines whether connection to the competition server should be established, **if it is unable to connect the software will crash**.
 
 ## How to Connect to the Pi
 Each raspberry pi should be already set up to connect to the SBRT network with SSH enabled. In order to login to the Pi, you must **first connect to the SBRT network** then type in [Git Bash](https://git-scm.com/downloads) (or any equivalent terminal):
@@ -18,7 +18,7 @@ This will ask you to sign in with your Pi's password. Contact an eboard member i
 Next, type `ls` and you will notice that the file structure is identical to the [client directory](client) in this repository. 
 
 ## How to Put Your Code on the Pi
-You will put your frontend code in the [`controller`](client/controller/) directory and write your motor controls in the [`controls.py`](client/controls.py) Python script. Running the program `the-hunt-client` will connect the frontend to the Python script while also stream your robot's video. **It will crash if the camera is not connected/detected.**
+You will put your frontend code in the [`controller`](controller/) directory and write your motor controls in the [`controls.py`](controls.py) Python script. Running the program `the-hunt-client` will connect the frontend to the Python script while also stream your robot's video. **It will crash if the camera is not connected/detected.**
 
 If you wish to work on the code on your computer instead of on the Pi, you can simply copy your files over to the appropriate directory using the following commands:
 
@@ -57,6 +57,6 @@ https://192.168.1.x/
 
 Simply click **Advanced** and then **Proceed to site (unsafe)**. *The reason for this is because your browser doesn't have the same SSL certificate on the robot. It is **NOT** dangerous.*
 
-Now, you should be prompted asking to enter your password. This is the password stated in [`config.json`](client/config.json). Upon success, you should see your robot's camera feed rotated 90 degrees. Otherwise, you will be disconnected and will need to refresh the page.
+Now, you should be prompted asking to enter your password. This is the password stated in [`config.json`](config.json). Upon success, you should see your robot's camera feed rotated 90 degrees. Otherwise, you will be disconnected and will need to refresh the page.
 
 Most things can be fixed with a refresh, otherwise check if your Pi if it printed an error message.
