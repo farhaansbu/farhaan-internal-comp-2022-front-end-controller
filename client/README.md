@@ -15,7 +15,7 @@ ssh pi@<your-team-name>.local
 ```
 This will ask you to sign in with your Pi's password. Contact an eboard member if you have not provided us with one yet.
 
-Next, type `ls` and you will notice that the file structure is identical to the [client directory](client) in this repository. 
+Next, type `ls` and you will notice that the file structure is identical to this directory. 
 
 ## How to Put Your Code on the Pi
 You will put your frontend code in the [`controller`](controller/) directory and write your motor controls in the [`controls.py`](controls.py) Python script. Running the program `the-hunt-client` will connect the frontend to the Python script while also stream your robot's video. **It will crash if the camera is not connected/detected.**
