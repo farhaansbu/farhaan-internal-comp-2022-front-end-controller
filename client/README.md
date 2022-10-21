@@ -61,6 +61,6 @@ https://192.168.1.x/
 
 Simply click **Advanced** and then **Proceed to site (unsafe)**. *The reason for this is because your browser doesn't have the same SSL certificate on the robot. It is **NOT** dangerous.*
 
-Now, you should be prompted asking to enter your password. This is the password stated in [`config.json`](config.json). Upon success, you should see your robot's camera feed rotated 90 degrees. Otherwise, you will be disconnected and will need to refresh the page.
+Now, you should be prompted asking to enter your password. This is the password stated in [`config.json`](config.json). Upon success, you should see your robot's camera feed attached to your controller and that anything you send to the bot using the built-in `sendToBot(command: string)` function will be sent down to `controls.py`. Otherwise, you will be disconnected and will need to refresh the page.
 
 Most things can be fixed with a refresh, otherwise check if your Pi if it printed an error message.
