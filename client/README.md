@@ -45,9 +45,13 @@ If your settings are correct, open in Google Chrome (or any other Chrome-based b
 ```
 https://<your-team-name>.local
 ```
-You should be greeted with a page that looks like this: ![Your connection is not private](../img/invalidSSL.png)
+You should be greeted with a page that looks like this:
 
-If you are not greeted by this page, SSH into your Pi and type `ifconfig`. You should see a screen like this: ![inet](../img/ifconfig.png)
+![Your connection is not private](../img/invalidSSL.png)
+
+If you are not greeted by this page, SSH into your Pi and type `ifconfig`. You should see a screen like this: 
+
+![inet](../img/ifconfig.png)
 
 Use the `inet` value instead of `<your-team-name>.local`.
 ```
