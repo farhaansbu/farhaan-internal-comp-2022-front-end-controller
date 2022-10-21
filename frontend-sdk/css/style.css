@@ -17,7 +17,7 @@ input[type=range]:hover {
 
 #up-arrow {
   position: absolute;
-  left: 900px;
+  left: 1150px;
   top: 275px;
 }
 
@@ -28,19 +28,19 @@ h1 {
 
 #down-arrow {
   position: absolute;
-  left: 900px;
+  left: 1150px;
   top: 400px;
 }
 
 #j1base {
   position: absolute;
-  left: 200px;
+  left: 450px;
   top: 298px;
 }
 
-#button-arrow {
+#button1-arrow {
   position:absolute;
-  left: 750px;
+  left: 950px;
   top: 325px; 
 }
 

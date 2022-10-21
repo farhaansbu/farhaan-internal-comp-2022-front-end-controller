@@ -19,7 +19,7 @@ const joystick = createJoyStick({
   joystick.base.id = "j1base"
   document.getElementById("movement").appendChild(joystick.base)
  
-  createArrow('button', "grabber", 120)
+  createArrow('button1', "grabber", 120)
 
  document.getElementById("button-arrow").addEventListener("click", function(event) {
     console.log("grabber");
