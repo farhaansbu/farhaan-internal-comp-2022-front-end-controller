@@ -1,17 +1,17 @@
 /*Common styling for slider*/
 input[type=range] {
-  -webkit-appearance: none;  /* Override default CSS styles */
-  width: 50%; /* Full-width */
-  height: 25px; /* Specified height */
-  background: none; /* Grey background */
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  transition: opacity .2s;  
+    -webkit-appearance: none;  /* Override default CSS styles */
+    width: 50%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: none; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    transition: opacity .2s;  
 }
 
 /* Mouse-over effects */
 input[type=range]:hover {
-  opacity: 1; /* Fully shown on mouse-over */
+    opacity: 1; /* Fully shown on mouse-over */
 }
 
 
