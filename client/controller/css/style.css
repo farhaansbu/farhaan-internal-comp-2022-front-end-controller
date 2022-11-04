@@ -14,6 +14,10 @@ input[type=range]:hover {
     opacity: 1; /* Fully shown on mouse-over */
 }
 
+#bot-stream {
+  margin-left: 20vw;
+
+}
 
 #up-arrow {
   position: absolute;
