@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6fe0cd173a75872d3d7eb1ca0adfd3d74cd8129d
 /**
  * 
  * @param {String} parentDivId The ID of the div to append elementToAdd

@@ -1,7 +1,11 @@
 /*Common styling for slider*/
 input[type=range] {
     -webkit-appearance: none;  /* Override default CSS styles */
+<<<<<<< HEAD
     width: 30%; /* Full-width */
+=======
+    width: 50%; /* Full-width */
+>>>>>>> 6fe0cd173a75872d3d7eb1ca0adfd3d74cd8129d
     height: 25px; /* Specified height */
     background: none; /* Grey background */
     outline: none; /* Remove outline */
@@ -14,6 +18,7 @@ input[type=range]:hover {
     opacity: 1; /* Fully shown on mouse-over */
 }
 
+<<<<<<< HEAD
 
 #up-arrow {
   position: absolute;
@@ -60,3 +65,52 @@ h1 {
 
 }
 
+=======
+/* 
+    * means that these styles will applied 
+    to EVERYTHING unless overridden
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+    having no prefix symbol means that this style 
+    will be applied to all elements of this kind
+*/
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#movement-controls {
+    height: 40%;
+}
+
+/* prefix any ID with a # to style it in CSS */
+#joystick-1 {
+    position: absolute; /* absolute means it has a fixed position within its parent div */
+    left: 50%; /* we can adjust this position by using CSS properties such as left, top, bottom and right */
+}
+
+#evenly-spaced-buttons {
+    display: flex;
+    flex-direction: row; /* could also be set to column to make sets of elements vertical */
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* 
+    this is a CSS class, prefixing it with a . 
+    lets you apply the same styles to every element 
+    that has the attribute: class="evenly-spaced-button" 
+*/
+.evenly-spaced-button {
+    border: none;
+    background-color: black;
+    color: white; /* set the text color to white */
+    padding: 10px;
+    border-radius: 10px;
+}
+>>>>>>> 6fe0cd173a75872d3d7eb1ca0adfd3d74cd8129d
