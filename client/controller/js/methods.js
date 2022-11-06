@@ -53,9 +53,15 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
             case "up":
                 imgUrl += "up-arrow.png";
                 break;
+            case "up1":
+                imgUrl += "up-arrow.png";
+                break;
             case "down":
                 imgUrl += "down-arrow.png";
                 break;
+            case "down1":
+                imgUrl += "down-arrow.png";
+                break;  
             case "button1":
                 imgUrl += "button1.png"; 
         }
