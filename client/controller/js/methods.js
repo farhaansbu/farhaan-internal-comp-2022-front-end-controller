@@ -64,6 +64,10 @@ function createArrow(direction, parentDivId, size = 10, imgFileName = "") {
                 break;  
             case "button1":
                 imgUrl += "button1.png"; 
+                break;
+            case "button2":
+                imgUrl += "button2.jpg";
+                break;
         }
     }
     //If imgFileName is passed as a parameter (ie. imgFileName is not an empty string), then append that to imgUrl

@@ -1,3 +1,8 @@
+* { user-select: none; }
+* {-webkit-touch-callout: none;}
+
+
+
 /*Common styling for slider*/
 input[type=range] {
     -webkit-appearance: none;  /* Override default CSS styles */
@@ -16,7 +21,10 @@ input[type=range]:hover {
 
 #bot-stream {
   margin-left: 20vw;
-
+  height: 250px;
+  position: absolute;
+  left: 20%;
+  top: 20%;
 }
 
 #up-arrow {
@@ -74,22 +82,12 @@ h1 {
 #button1-arrow {
   position:absolute;
   left: 950px;
-  top: 350px; 
+  top: 410px; 
 }
 
-#slider {
-
-  position:absolute;
-  rotate: 270deg;
-  left: 1100px;
-  top: 425px;
-}
-
-#slider-value {
-
-  position:absolute;
-  left: 1500px;
-  top: 350px;
-
+#button2-arrow {
+  position: absolute;
+  left: 960px;
+  top: 300px;
 }
 
