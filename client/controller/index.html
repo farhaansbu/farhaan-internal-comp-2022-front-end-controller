@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <!-- Materialize stylesheet for more modern-looking layout -->
     <link rel="stylesheet" href="css/materialize-min.css">
     <link rel="stylesheet" type = "text/css" href="css/style.css">
@@ -12,18 +11,17 @@
 </head>
 
 <body>
-    <h1> Academic Weapons </h1>
-    <div id = "grabber"></div>
-    <div id = "movement"></div>
-    <div id = "speed"></div> 
-    <div id = "bot-stream"></div> 
+    <div class = "page" style = "display: flex; flex-direction: column;"> 
+        <div class = "header">
+            <h1> Academic Weapons </h1>
+        </div>
+        <div class = "app-row" style = "display: flex; flex-direction: row; justify-content: space-between;"> 
+            <div id = "grabber" style = "display: flex; flex-direction: column;"></div>
+            <div id = "movement"></div>
+            <div id = "speed"></div> 
+            <div id = "bot-stream"></div> 
+        </div>
+    </div>
     <script type="module" src="./js/index.js"></script>
-=======
-    <link rel="stylesheet" href="index.css">
-    <title>Example Controller</title>
-</head>
-<body>
-	<script src="index.js"></script>
->>>>>>> 6fe0cd173a75872d3d7eb1ca0adfd3d74cd8129d
 </body>
 </html>

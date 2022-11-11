@@ -15,42 +15,45 @@ input[type=range]:hover {
 }
 
 #bot-stream {
-  margin-left: 20vw;
-
+  position: relative;
+  margin-left: 5vw;
+  border-radius: 5px;
+  border-color: black;
 }
 
 #up-arrow {
-  position: absolute;
-  left: 1150px;
-  top: 300px;
+  position: relative;
+  left: 10px;
+  top: 30px;
+  color: black
 }
 
 
 #up1-arrow {
-  position: absolute;
-  left: 300px;
-  top: 275px;
+  position: relative;
+  left: 30px;
+  top: 27.5px;
 
 }
 
 #down1-arrow {
-  position: absolute;
-  left: 300px;
-  top: 450px;
+  position: relative;
+  left: 30px;
+  top: 45px;
 
 }
 
 #left-arrow {
-  position: absolute;
-  left: 200px;
-  top: 357.5px;
+  position: relative;
+  left: 20px;
+  top: 35.75px;
 
 }
 
 #right-arrow {
-  position: absolute;
-  left: 400px;
-  top: 357.5px;
+  position: relative;
+  left: 40px;
+  top: 35.75px;
 
 }
 
@@ -60,36 +63,51 @@ h1 {
 
 
 #down-arrow {
-  position: absolute;
-  left: 1150px;
-  top: 425px;
+  position: relative;
+  left: 10px;
+  top: 80px;
 }
 
 #j1base {
-  position: absolute;
   left: 450px;
   top: 298px;
 }
 
 #button1-arrow {
-  position:absolute;
-  left: 950px;
-  top: 350px; 
+  position: relative;
+  left: 95px;
+  top: 0; 
 }
 
 #slider {
-
-  position:absolute;
+  position: relative;
   rotate: 270deg;
-  left: 1100px;
-  top: 425px;
+  left: 110px;
+  top: 42.5px;
 }
 
 #slider-value {
-
-  position:absolute;
-  left: 1500px;
-  top: 350px;
+  position: relative;
+  left: 150px;
+  top: 35px;
 
 }
 
+#grabber {
+  background-color: blue;
+}
+
+#page {
+  display: flex;
+  flex-direction: column;
+}
+
+#app-row {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+}
+
+body {
+  background-color: white;
+}
