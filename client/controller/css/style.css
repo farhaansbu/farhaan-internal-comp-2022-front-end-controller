@@ -25,7 +25,7 @@ input[type=range]:hover {
   margin-left: 20vw;
   height: 250px;
   position: absolute;
-  left: 20%;
+  left: 25%;
   top: 20%;
 }
 
@@ -38,28 +38,28 @@ input[type=range]:hover {
 
 #up1-arrow {
   position: absolute;
-  left: 300px;
+  left: 250px;
   top: 275px;
 
 }
 
 #down1-arrow {
   position: absolute;
-  left: 300px;
+  left: 250px;
   top: 450px;
 
 }
 
 #left-arrow {
   position: absolute;
-  left: 200px;
+  left: 150px;
   top: 357.5px;
 
 }
 
 #right-arrow {
   position: absolute;
-  left: 400px;
+  left: 350px;
   top: 357.5px;
 
 }

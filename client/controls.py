@@ -147,14 +147,14 @@ try:
 
         if (robot["servo_open"] == "open" and duty >= 7.5):
             print("open")
-            duty -= 0.5
+            duty -= 1
             pwmServo.ChangeDutyCycle(duty)
             sleep(0.1)
             pwmServo.ChangeDutyCycle(0)
 
         if (robot["servo_open"] == "closed" and duty <= 12.5):
             print("closed")
-            duty += 0.5
+            duty += 1
             pwmServo.ChangeDutyCycle(duty)
             sleep(0.1)
             pwmServo.ChangeDutyCycle(0)
