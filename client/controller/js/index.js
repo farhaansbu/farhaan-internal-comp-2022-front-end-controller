@@ -93,7 +93,7 @@ document.getElementById("left-arrow").addEventListener("touchend", function(even
  
   createArrow('button1', "grabber", 120)
  document.getElementById("button1-arrow").addEventListener("touchstart", function(event) {
-  json.servo_open = "open";
+  json.servo_open = "closed";
   sendToBot(json)
   console.log("grabber");
   });
@@ -106,16 +106,18 @@ document.getElementById("left-arrow").addEventListener("touchend", function(even
 
   createArrow('button2', "grabber", 100)
   document.getElementById("button2-arrow").addEventListener("touchstart", function(event) {
-    json.servo_open = "closed";
+    json.servo_open = "open";
     sendToBot(json)
     console.log("grabber");
     });
 
-  document.getElementById("button2-arrow").addEventListener("touchend", function(event) {
-    json.servo_open = "stop";
-    sendToBot(json)
-    console.log("grabber");
+    document.getElementById("button2-arrow").addEventListener("touchend", function(event) {
+      json.servo_open = "stop";
+      sendToBot(json)
+      console.log("grabber");
       });
+
+  
 
 
 

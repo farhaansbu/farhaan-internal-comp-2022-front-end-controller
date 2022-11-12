@@ -12,7 +12,7 @@ GPIO.setmode(GPIO.BCM)
 
 
 servo1 = 20
-servo2 = 21
+#servo2 = 21
 mL_input1 = 13
 mL_input2 = 6
 mL_enable = 19
@@ -21,7 +21,7 @@ GPIO.setup(mL_input1, GPIO.OUT)
 GPIO.setup(mL_input2, GPIO.OUT)
 GPIO.setup(mL_enable, GPIO.OUT)
 GPIO.setup(servo1, GPIO.OUT)
-GPIO.setup(servo2, GPIO.OUT)
+#GPIO.setup(servo2, GPIO.OUT)
 
 
 
@@ -39,7 +39,9 @@ GPIO.setup(mR_input2, GPIO.OUT)
 #Set up PWM
 pwmL = GPIO.PWM(mL_enable, 50)
 pwmServo = GPIO.PWM(servo1, 50)
-pwmServo2 = GPIO.PWM(servo2, )
+#pwmServo2 = GPIO.PWM(servo2, 50)
+pwmServo.start(0)
+#pwmServo2.start(0)
 pwmL.start(0)
 
 
@@ -90,6 +92,10 @@ def turnLeft():
     print("left")
 
 
+    
+    
+
+
 print('controls.py now running!')
 
 
@@ -101,6 +107,12 @@ print('controls.py now running!')
  
 
 try:
+    
+    duty = 7.5
+    pwmServo.ChangeDutyCycle(duty)
+    sleep(0.1)
+    pwmServo.ChangeDutyCycle(0)
+    
 
     while True:
         controllerInput = input()
@@ -132,6 +144,23 @@ try:
             print("left")
             speed = 100
             turnLeft()
+
+        if (robot["servo_open"] == "open" and duty >= 7.5):
+            print("open")
+            duty -= 0.5
+            pwmServo.ChangeDutyCycle(duty)
+            sleep(0.1)
+            pwmServo.ChangeDutyCycle(0)
+
+        if (robot["servo_open"] == "closed" and duty <= 12.5):
+            print("closed")
+            duty += 0.5
+            pwmServo.ChangeDutyCycle(duty)
+            sleep(0.1)
+            pwmServo.ChangeDutyCycle(0)
+            
+            
+            
             
 
 finally: 
